@@ -9,7 +9,7 @@ export default function Banking() {
           <Grid size={{ xs: 12, md: 7, lg: 8 }}>
             <LeftSide />
           </Grid>
-          <Grid size={{ xs: 12, md: 5, lg: 3 }}>
+          <Grid size={{ xs: 12, md: 5, lg: 4 }}>
             <RightSide />
           </Grid>
         </Grid>
