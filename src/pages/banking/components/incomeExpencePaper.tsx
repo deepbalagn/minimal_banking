@@ -11,7 +11,6 @@ import {
   chartsGridClasses,
   LineChart,
   lineElementClasses,
-  markElementClasses,
 } from "@mui/x-charts";
 import { useState } from "react";
 
@@ -23,7 +22,7 @@ const xLabels = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep"];
 export default function IncomeExpenensePaper() {
   const [isIncomeGraph, setIsIncomeGraph] = useState(true);
   return (
-    <Paper sx={{ p: 3, mb: 2, borderRadius: 5 }} elevation={5}>
+    <Paper sx={{ p: 3, mb: 2, borderRadius: 5 }} >
       <Box
         sx={{
           display: "flex",
@@ -265,12 +264,6 @@ export default function IncomeExpenensePaper() {
                 stroke: "#1cca56ff",
                 strokeWidth: 2,
               },
-              [`& .${markElementClasses.root}`]: {
-                stroke: "#07f3c0ff",
-                r: 4,
-                fill: "#fff",
-                strokeWidth: 2,
-              },
               [`& .${chartsGridClasses.line}`]: {
                 strokeDasharray: "5 3",
                 strokeWidth: 2,
@@ -285,7 +278,6 @@ export default function IncomeExpenensePaper() {
             series={[
               {
                 data: expenseData,
-                label: "expense",
                 showMark: false,
                 color: "#b31c42ff",
               },
@@ -304,12 +296,6 @@ export default function IncomeExpenensePaper() {
             sx={{
               [`& .${lineElementClasses.root}`]: {
                 stroke: "#c2163bff",
-                strokeWidth: 2,
-              },
-              [`& .${markElementClasses.root}`]: {
-                stroke: "#f80021ff",
-                r: 4,
-                fill: "#fff",
                 strokeWidth: 2,
               },
               [`& .${chartsGridClasses.line}`]: {
