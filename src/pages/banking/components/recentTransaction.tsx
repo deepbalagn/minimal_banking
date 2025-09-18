@@ -1,5 +1,5 @@
 import { ArrowRight } from "@mui/icons-material";
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, Button, Paper, Typography } from "@mui/material";
 import RecentTransactionTable from "../../../customizedComponents/recentTransactionTable";
 
 export default function RecentTransaction() {
@@ -18,7 +18,7 @@ export default function RecentTransaction() {
         </Box>
       </Box>
       <Box>
-        <RecentTransactionTable/>
+        <RecentTransactionTable />
       </Box>
       <Box
         sx={{
@@ -36,7 +36,17 @@ export default function RecentTransaction() {
             alignItems: "center",
           }}
         >
-          <Typography variant="h6">view all </Typography> <ArrowRight />
+          <Button
+            size="small"
+            variant="outlined"
+            color="inherit"
+            href="#"
+            disableElevation
+            endIcon={<ArrowRight />}
+            sx={{ textTransform: "none", fontWeight: "bold" , border:0}}
+          >
+            View All
+          </Button>
         </Box>
       </Box>
     </Paper>

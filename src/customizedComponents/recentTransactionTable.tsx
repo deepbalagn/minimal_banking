@@ -68,10 +68,10 @@ export default function RecentTransactionTable() {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead sx={{ backgroundColor: "#f4f6f8" }}>
           <TableRow>
-            <TableCell>Description</TableCell>
-            <TableCell align="left">Date</TableCell>
-            <TableCell align="left">Amount</TableCell>
-            <TableCell align="left">Status</TableCell>
+            <TableCell><Typography fontWeight="bold" color="textSecondary" >Description</Typography></TableCell>
+            <TableCell align="left"><Typography fontWeight="bold" color="textSecondary" >Date</Typography></TableCell>
+            <TableCell align="left"><Typography fontWeight="bold" color="textSecondary" >Amount</Typography></TableCell>
+            <TableCell align="left"><Typography fontWeight="bold" color="textSecondary" >Status</Typography></TableCell>
             <TableCell align="left"></TableCell>
           </TableRow>
         </TableHead>

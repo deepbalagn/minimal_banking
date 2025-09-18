@@ -44,23 +44,18 @@ export default function IncomeExpenensePaper() {
               display: "flex",
               flexDirection: "row",
               alignItems: "center",
+              gap: 0.5,
             }}
           >
-            <Typography variant="body1">Total Balance </Typography>{" "}
-            <InfoOutlineRounded sx={{ fontSize: 16 }} />
+            <Typography variant="body1" color="textSecondary">
+              {" "}
+              Total Balance{" "}
+            </Typography>{" "}
+            <InfoOutlineRounded sx={{ fontSize: 16 }} color="inherit" />
           </Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-            }}
-          >
-            <AttachMoney sx={{ fontWeight: "bold" }} />
-            <Typography variant="h5" fontWeight={"bold"}>
-              49,990
-            </Typography>
-          </Box>
+          <Typography variant="h4" fontWeight={"bold"} mt={1.5}>
+            $49,990
+          </Typography>
         </Box>
         <Box
           sx={{
@@ -74,9 +69,10 @@ export default function IncomeExpenensePaper() {
             size="small"
             variant="contained"
             color="inherit"
-            href="/dashboard/tour/new"
+            href="#"
             disableElevation
             startIcon={<ArrowUpward />}
+            sx={{textTransform:'none', fontWeight:"bold"}}
           >
             Send
           </Button>
@@ -84,9 +80,10 @@ export default function IncomeExpenensePaper() {
             size="small"
             variant="contained"
             color="inherit"
-            href="/dashboard/tour/new"
+            href="#"
             disableElevation
             startIcon={<Add />}
+            sx={{textTransform:'none', fontWeight:"bold"}}
           >
             Add Card
           </Button>
@@ -97,6 +94,7 @@ export default function IncomeExpenensePaper() {
             href="/dashboard/tour/new"
             disableElevation
             startIcon={<ArrowDownward />}
+            sx={{textTransform:'none', fontWeight:"bold"}}
           >
             Request
           </Button>
