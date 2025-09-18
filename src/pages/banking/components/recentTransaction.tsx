@@ -1,9 +1,10 @@
 import { ArrowRight } from "@mui/icons-material";
 import { Box, Paper, Typography } from "@mui/material";
+import RecentTransactionTable from "../../../customizedComponents/recentTransactionTable";
 
 export default function RecentTransaction() {
   return (
-    <Paper sx={{ mb: 2, borderRadius: 5 }} elevation={5}>
+    <Paper sx={{ mb: 2, borderRadius: 5 }}>
       <Box
         sx={{
           display: "flex",
@@ -15,6 +16,9 @@ export default function RecentTransaction() {
         <Box>
           <Typography variant="h6">Recent transitions</Typography>{" "}
         </Box>
+      </Box>
+      <Box>
+        <RecentTransactionTable/>
       </Box>
       <Box
         sx={{

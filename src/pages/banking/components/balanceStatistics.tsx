@@ -14,7 +14,7 @@ const weeklyBarxLabels = ["2018", "2019", "2020", "2021", "2022", "2023"];
 export default function BalanceStatistics() {
   const [selectedBarChart] = useState("yearly");
   return (
-    <Paper sx={{ p: 3, mb: 2, borderRadius: 5 }} elevation={5}>
+    <Paper sx={{ p: 3, mb: 2, borderRadius: 5 }}>
       <Box
         sx={{
           display: "flex",
@@ -155,25 +155,49 @@ export default function BalanceStatistics() {
         {selectedBarChart === "monthly" && (
           <BarChart
             height={300}
+            borderRadius={6}
             series={[
-              { data: barIncomeData, label: "income", id: "iId" },
-              { data: barSavingsData, label: "saving", id: "sId" },
-              { data: barInvestmentData, label: "investment", id: "invId" },
+              { data: barIncomeData, label: "income", id: "iId", color:"#007867" },
+              { data: barSavingsData, label: "saving", id: "sId" , color:"#ffab00"},
+              { data: barInvestmentData, label: "investment", id: "invId" , color:"#00b8d9"},
             ]}
-            xAxis={[{ data: monthlyBarxLabels }]}
-            yAxis={[{ width: 50 }]}
+            xAxis={[
+              { data: monthlyBarxLabels, disableLine: true, disableTicks: true },
+            ]}
+            yAxis={[{ width: 50, disableLine: true, disableTicks: true }]}
+            grid={{ horizontal: true }}
+            sx={{
+              [`& .${chartsGridClasses.line}`]: {
+                strokeDasharray: "5 3",
+                strokeWidth: 2,
+              },
+            }}
+            disableAxisListener
+            hideLegend
           />
         )}
         {selectedBarChart === "weekly" && (
           <BarChart
             height={300}
+            borderRadius={6}
             series={[
-              { data: barIncomeData, label: "income", id: "iId" },
-              { data: barSavingsData, label: "saving", id: "sId" },
-              { data: barInvestmentData, label: "investment", id: "invId" },
+              { data: barIncomeData, label: "income", id: "iId", color:"#007867" },
+              { data: barSavingsData, label: "saving", id: "sId" , color:"#ffab00"},
+              { data: barInvestmentData, label: "investment", id: "invId" , color:"#00b8d9"},
             ]}
-            xAxis={[{ data: weeklyBarxLabels }]}
-            yAxis={[{ width: 50 }]}
+            xAxis={[
+              { data: weeklyBarxLabels, disableLine: true, disableTicks: true },
+            ]}
+            yAxis={[{ width: 50, disableLine: true, disableTicks: true }]}
+            grid={{ horizontal: true }}
+            sx={{
+              [`& .${chartsGridClasses.line}`]: {
+                strokeDasharray: "5 3",
+                strokeWidth: 2,
+              },
+            }}
+            disableAxisListener
+            hideLegend
           />
         )}
       </Box>

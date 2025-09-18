@@ -5,7 +5,7 @@ import ApexChart from "../../../customizedComponents/polarAreaChart";
 
 export default function ExpenseCategory() {
   return (
-    <Paper sx={{ mb: 2, borderRadius: 5 }} elevation={5}>
+    <Paper sx={{ mb: 2, borderRadius: 5 }} >
       <Box
         sx={{
           display: "flex",

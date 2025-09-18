@@ -6,7 +6,15 @@ import {
   AttachMoney,
   InfoOutlineRounded,
 } from "@mui/icons-material";
-import { Box, Button, Chip, Grid, Paper, Typography } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Button,
+  Chip,
+  Grid,
+  Paper,
+  Typography,
+} from "@mui/material";
 import {
   chartsGridClasses,
   LineChart,
@@ -22,7 +30,7 @@ const xLabels = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep"];
 export default function IncomeExpenensePaper() {
   const [isIncomeGraph, setIsIncomeGraph] = useState(true);
   return (
-    <Paper sx={{ p: 3, mb: 2, borderRadius: 5 }} >
+    <Paper sx={{ p: 3, mb: 2, borderRadius: 5 }}>
       <Box
         sx={{
           display: "flex",
@@ -96,12 +104,13 @@ export default function IncomeExpenensePaper() {
       </Box>
       <Paper
         sx={{
-          p: 3,
+          p: 1,
           m: 1,
           backgroundColor: "#f4f6f8ff",
+          borderRadius: 5,
         }}
       >
-        <Grid container>
+        <Grid container spacing={1}>
           <Grid size={6}>
             <Button
               color="inherit"
@@ -114,7 +123,15 @@ export default function IncomeExpenensePaper() {
                 borderRadius: 5,
               }}
             >
-              <Box sx={{ display: "flex", flexDirection: "row", p: 3 }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  p: 3,
+                  width: "100%",
+                }}
+              >
                 <Box
                   sx={{
                     position: "absolute",
@@ -133,12 +150,24 @@ export default function IncomeExpenensePaper() {
                     icon={<ArrowUpward />}
                   />
                 </Box>
-                <Icon
-                  icon="eva:diagonal-arrow-left-down-fill"
-                  width="40"
-                  height="40"
-                />
-                <Box paddingLeft={3}>
+                <Avatar
+                  sx={{ backgroundColor: "#004b50", width: 56, height: 56 }}
+                >
+                  <Icon
+                    icon="eva:diagonal-arrow-left-down-fill"
+                    width="40"
+                    height="40"
+                  />
+                </Avatar>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "flex-end",
+                    alignItems: "center",
+                    padding: 1,
+                  }}
+                >
                   <Box
                     sx={{
                       display: "flex",
@@ -177,7 +206,15 @@ export default function IncomeExpenensePaper() {
                 borderRadius: 5,
               }}
             >
-              <Box sx={{ display: "flex", flexDirection: "row", p: 3 }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  p: 3,
+                  width: "100%",
+                }}
+              >
                 <Box
                   sx={{
                     position: "absolute",
@@ -196,12 +233,24 @@ export default function IncomeExpenensePaper() {
                     icon={<ArrowDownward />}
                   />
                 </Box>
-                <Icon
-                  icon="eva:diagonal-arrow-right-up-fill"
-                  width="40"
-                  height="40"
-                />
-                <Box paddingLeft={3}>
+                <Avatar
+                  sx={{ backgroundColor: "#7a4100", width: 56, height: 56 }}
+                >
+                  <Icon
+                    icon="eva:diagonal-arrow-right-up-fill"
+                    width="40"
+                    height="40"
+                  />
+                </Avatar>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "flex-end",
+                    alignItems: "center",
+                    padding: 1,
+                  }}
+                >
                   <Box
                     sx={{
                       display: "flex",
