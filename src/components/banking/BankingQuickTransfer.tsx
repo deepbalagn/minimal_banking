@@ -81,7 +81,7 @@ export function BankingQuickTransfer() {
   const [amount, setAmount] = useState<string | number>(200);
   const [openDialog, setOpenDialog] = useState(false);
   const [selectedContact, setSelectedContact] = useState<BankingContactsType | null>(null);
-  const [selectedAvatar, setSelectedAvatar] = useState<string | null>("marjolaine.white94@gmail.com");
+  const [selectedAvatar, setSelectedAvatar] = useState<string | null>("vergie.block82@hotmail.com");
 
   const handleChangeSlider = useCallback(
     (event: Event, newValue: number | number[]) => {
@@ -170,15 +170,16 @@ export function BankingQuickTransfer() {
               alignItems: "center",
               flexWrap: "wrap",
               justifyContent: 'center',
-              mx:1
+              gap:1.8
+              // mx:1
             }}
             component="span"
           >
         
-              {BankingContactsData.slice(0, 5).map((contact) => (
+              {BankingContactsData.slice(0, 7).map((contact) => (
                 <Box
                   key={contact.Email}
-                  sx={{ display: 'flex', justifyContent: 'center', padding: '10px' }}
+                  sx={{  }}
                 >
                   <Avatar
                     src={contact.URL}
