@@ -1,6 +1,6 @@
 import { ArrowRight } from "@mui/icons-material";
 import { Box, Button, Paper, Typography } from "@mui/material";
-import RecentTransactionTable from "../../../customizedComponents/recentTransactionTable";
+import RecentTransactionTable from "../../customizedComponents/recentTransactionTable";
 
 export default function RecentTransaction() {
   return (

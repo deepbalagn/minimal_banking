@@ -1,5 +1,5 @@
 import { Box, Paper, Typography } from "@mui/material";
-import CustomizedMenus from "../../../customizedComponents/StyledMenu";
+import CustomizedMenus from "../../customizedComponents/StyledMenu";
 import { AttachMoney, Circle } from "@mui/icons-material";
 import { useState } from "react";
 import { BarChart, chartsGridClasses } from "@mui/x-charts";
