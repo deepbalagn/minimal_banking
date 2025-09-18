@@ -85,6 +85,7 @@ export function BankingQuickTransfer() {
 
   const handleChangeSlider = useCallback(
     (event: Event, newValue: number | number[]) => {
+      console.log(event);      
       setAmount(newValue as number);
     },
     []

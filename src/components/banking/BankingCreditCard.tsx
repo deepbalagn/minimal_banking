@@ -1,6 +1,7 @@
 import { Icon } from "@iconify/react";
 import { Box, IconButton, Stack, Typography } from "@mui/material";
 import { useState } from "react";
+import Menu_Component from "../../customizedComponents/MenuComponent";
 
 export function BankingCreditCard() {
   const [showCurrency, setShowCurrency] = useState<boolean>(true);
@@ -47,13 +48,7 @@ export function BankingCreditCard() {
           >
             Current Balance
           </Typography>
-          <IconButton>
-            <Icon
-              icon="eva:more-vertical-fill"
-              color="#ffffff"
-              opacity={0.48}
-            />
-          </IconButton>
+          <Menu_Component btnColor="white"/>
         </Box>
 
         <Box sx={{ display: "flex" }} gap={1}>

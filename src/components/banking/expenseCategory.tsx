@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 import { Box, Grid, Paper, Typography } from "@mui/material";
 // import { PieChart } from "@mui/x-charts";
-import ApexChart from "../../customizedComponents/polarAreaChart";
+import ApexChart from "../../customizedComponents/PolarAreaChart";
 
 export default function ExpenseCategory() {
   return (

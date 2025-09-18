@@ -1,7 +1,7 @@
-import IncomeExpenensePaper from "../../components/banking/incomeExpencePaper";
-import BalanceStatistics from "../../components/banking/balanceStatistics";
-import ExpenseCategory from "../../components/banking/expenseCategory";
-import RecentTransaction from "../../components/banking/recentTransaction";
+import IncomeExpenensePaper from "../../components/banking/IncomeExpencePaper";
+import BalanceStatistics from "../../components/banking/BalanceStatistics";
+import ExpenseCategory from "../../components/banking/ExpenseCategory";
+import RecentTransaction from "../../components/banking/RecentTransaction";
 
 export default function RightSide() {
   return (
