@@ -1,15 +1,24 @@
 import { Icon } from "@iconify/react";
-import { Add, ArrowDownward, ArrowUpward, AttachMoney, InfoOutlineRounded } from "@mui/icons-material";
+import {
+  Add,
+  ArrowDownward,
+  ArrowUpward,
+  AttachMoney,
+  InfoOutlineRounded,
+} from "@mui/icons-material";
 import { Box, Button, Chip, Grid, Paper, Typography } from "@mui/material";
-import { LineChart, lineElementClasses, markElementClasses } from "@mui/x-charts";
+import {
+  chartsGridClasses,
+  LineChart,
+  lineElementClasses,
+  markElementClasses,
+} from "@mui/x-charts";
 import { useState } from "react";
-
 
 const margin = { right: 24 };
 const incomeData = [5, 31, 33, 50, 99, 76, 72, 76, 89];
-const expenseData = [5, 31, 33, 50, 99, 76, 72, 76, 89];
+const expenseData = [5, 3, 3.5, 5, 9, 6, 2, 7, 9];
 const xLabels = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep"];
-
 
 export default function IncomeExpenensePaper() {
   const [isIncomeGraph, setIsIncomeGraph] = useState(true);
@@ -232,10 +241,25 @@ export default function IncomeExpenensePaper() {
         {isIncomeGraph ? (
           <LineChart
             height={300}
-            series={[{ data: incomeData, label: "income" }]}
-            xAxis={[{ scaleType: "point", data: xLabels }]}
-            yAxis={[{ width: 50 }]}
+            series={[
+              {
+                data: incomeData,
+                showMark: false,
+                shape: "circle",
+                color: "#218670ff",
+              },
+            ]}
+            xAxis={[
+              {
+                scaleType: "point",
+                data: xLabels,
+                disableLine: true,
+                disableTicks: true,
+              },
+            ]}
+            yAxis={[{ width: 50, disableLine: true, disableTicks: true }]}
             margin={margin}
+            grid={{ horizontal: true }}
             sx={{
               [`& .${lineElementClasses.root}`]: {
                 stroke: "#1cca56ff",
@@ -243,20 +267,40 @@ export default function IncomeExpenensePaper() {
               },
               [`& .${markElementClasses.root}`]: {
                 stroke: "#07f3c0ff",
-                r: 4, 
+                r: 4,
                 fill: "#fff",
+                strokeWidth: 2,
+              },
+              [`& .${chartsGridClasses.line}`]: {
+                strokeDasharray: "5 3",
                 strokeWidth: 2,
               },
             }}
             disableAxisListener
+            hideLegend
           />
         ) : (
           <LineChart
             height={300}
-            series={[{ data: expenseData, label: "expense" }]}
-            xAxis={[{ scaleType: "point", data: xLabels }]}
-            yAxis={[{ width: 50 }]}
+            series={[
+              {
+                data: expenseData,
+                label: "expense",
+                showMark: false,
+                color: "#b31c42ff",
+              },
+            ]}
+            xAxis={[
+              {
+                scaleType: "point",
+                data: xLabels,
+                disableLine: true,
+                disableTicks: true,
+              },
+            ]}
+            yAxis={[{ width: 50, disableLine: true, disableTicks: true }]}
             margin={margin}
+            grid={{ horizontal: true }}
             sx={{
               [`& .${lineElementClasses.root}`]: {
                 stroke: "#c2163bff",
@@ -264,12 +308,17 @@ export default function IncomeExpenensePaper() {
               },
               [`& .${markElementClasses.root}`]: {
                 stroke: "#f80021ff",
-                r: 4, 
+                r: 4,
                 fill: "#fff",
+                strokeWidth: 2,
+              },
+              [`& .${chartsGridClasses.line}`]: {
+                strokeDasharray: "5 3",
                 strokeWidth: 2,
               },
             }}
             disableAxisListener
+            hideLegend
           />
         )}
       </Box>
