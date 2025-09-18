@@ -243,7 +243,7 @@ export default function IncomeExpenensePaper() {
               },
               [`& .${markElementClasses.root}`]: {
                 stroke: "#07f3c0ff",
-                r: 4, // Modify the circle radius
+                r: 4, 
                 fill: "#fff",
                 strokeWidth: 2,
               },
@@ -264,7 +264,7 @@ export default function IncomeExpenensePaper() {
               },
               [`& .${markElementClasses.root}`]: {
                 stroke: "#f80021ff",
-                r: 4, // Modify the circle radius
+                r: 4, 
                 fill: "#fff",
                 strokeWidth: 2,
               },
