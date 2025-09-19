@@ -6,3 +6,8 @@ export type ExpenseCategoryItemProps = {
     iconWidth? : number,
     titleFontSize? : number
 }
+export type ExpenseCategoryItemType = {
+  title: string;
+  iconText: string;
+  iconColor: string;
+};

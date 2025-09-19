@@ -24,7 +24,7 @@ import { useState } from "react";
 
 const margin = { right: 24 };
 const incomeData = [5, 31, 33, 50, 99, 76, 72, 76, 89];
-const expenseData = [5, 3, 3.5, 5, 9, 6, 2, 7, 9];
+const expenseData = [10, 41, 35, 51, 49, 62, 69, 91, 148];
 const xLabels = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep"];
 
 export default function IncomeExpenensePaper() {
@@ -337,6 +337,7 @@ export default function IncomeExpenensePaper() {
           />
         ) : (
           <LineChart
+            
             height={300}
             series={[
               {

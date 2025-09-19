@@ -1,6 +1,9 @@
 import { Box, Grid, Paper, Typography } from "@mui/material";
 import ApexChart from "../../customizedComponents/PolarAreaChart";
 import ExpenseCategoryItem from "../../customizedComponents/ExpenseCategoryItems";
+import { expenseCategoryItemList } from "../../data/ExpenseCategoryItemList";
+
+
 
 export default function ExpenseCategory() {
   return (
@@ -28,62 +31,15 @@ export default function ExpenseCategory() {
         <ApexChart />
         <Box p={1}>
           <Grid container spacing={2}>
-            <Grid size={6}>
-              <ExpenseCategoryItem
-                title={"Entertain ($22)"}
-                iconText={"mingcute:game-2-fill"}
-                iconColor="#794dc7"
-              />
-            </Grid>
-            <Grid size={6}>
-              <ExpenseCategoryItem
-                title={"Fuel ($18)"}
-                iconText={"bi:fuel-pump-fill"}
-                iconColor="#ff7c5f"
-              />
-            </Grid>
-            <Grid size={6}>
-              <ExpenseCategoryItem
-                title={"Fast Food ($16)"}
-                iconText={"ic:baseline-fastfood"}
-                iconColor="#3abb90"
-              />
-            </Grid>
-            <Grid size={6}>
-              <ExpenseCategoryItem
-                title={"Cafe ($17)"}
-                iconText={"carbon:cafe"}
-                iconColor="#ffbe3a"
-              />
-            </Grid>
-            <Grid size={6}>
-              <ExpenseCategoryItem
-                title={"Connection ($14)"}
-                iconText={"mynaui:speaker-solid"}
-                iconColor="#3a8db3"
-              />
-            </Grid>
-            <Grid size={6}>
-              <ExpenseCategoryItem
-                title={"Health Care ($22)"}
-                iconText={"streamline-pixel:health-drug-medicine-bag-aid-1"}
-                iconColor="#3ac8e2"
-              />
-            </Grid>
-            <Grid size={6}>
-              <ExpenseCategoryItem
-                title={"Fitness ($10)"}
-                iconText={"material-symbols:fitness-center-rounded"}
-                iconColor="#54d283"
-              />
-            </Grid>
-            <Grid size={6}>
-              <ExpenseCategoryItem
-                title={"SuperMarket ($21)"}
-                iconText={"fontisto:shopping-basket"}
-                iconColor="#c78f3a"
-              />
-            </Grid>
+            {expenseCategoryItemList.map((data) => (
+              <Grid size={6}>
+                <ExpenseCategoryItem
+                  title={data.title}
+                  iconText={data.iconText}
+                  iconColor={data.iconColor}
+                />
+              </Grid>
+            ))}
           </Grid>
         </Box>
       </Box>
