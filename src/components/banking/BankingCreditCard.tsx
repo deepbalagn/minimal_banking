@@ -12,6 +12,7 @@ export function BankingCreditCard() {
   }
   return (
     <>
+    
       <Box
         sx={{
           backgroundImage: `url(${"src/assets/images/background/background-4.jpg"})`,

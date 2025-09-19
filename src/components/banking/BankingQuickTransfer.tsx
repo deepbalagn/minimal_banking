@@ -38,11 +38,11 @@ function ConfirmTransferDialog({
         sx={{
           px: 3,
           gap: 3,
-          display: 'flex',
-          flexDirection: 'column',
+          display: "flex",
+          flexDirection: "column",
         }}
       >
-        <Box sx={{ gap: 2, display: 'flex', alignItems: 'center' }}>
+        <Box sx={{ gap: 2, display: "flex", alignItems: "center" }}>
           <Avatar src={contactInfo?.URL} sx={{ width: 48, height: 48 }} />
           <ListItemText
             primary={contactInfo?.Username}
@@ -57,7 +57,12 @@ function ConfirmTransferDialog({
           ${amount}
         </Typography>
 
-        <TextField fullWidth multiline rows={3} placeholder="Write a message..." />
+        <TextField
+          fullWidth
+          multiline
+          rows={3}
+          placeholder="Write a message..."
+        />
       </Box>
 
       <DialogActions>
@@ -80,12 +85,15 @@ function ConfirmTransferDialog({
 export function BankingQuickTransfer() {
   const [amount, setAmount] = useState<string | number>(200);
   const [openDialog, setOpenDialog] = useState(false);
-  const [selectedContact, setSelectedContact] = useState<BankingContactsType | null>(null);
-  const [selectedAvatar, setSelectedAvatar] = useState<string | null>("marjolaine.white94@gmail.com");
+  const [selectedContact, setSelectedContact] =
+    useState<BankingContactsType | null>(null);
+  const [selectedAvatar, setSelectedAvatar] = useState<string | null>(
+    "marjolaine.white94@gmail.com"
+  );
 
   const handleChangeSlider = useCallback(
     (event: Event, newValue: number | number[]) => {
-      console.log(event);      
+      console.log(event);
       setAmount(newValue as number);
     },
     []
@@ -136,10 +144,8 @@ export function BankingQuickTransfer() {
             <Button
               size="small"
               color="inherit"
-              endIcon={
-                <Icon icon="eva:arrow-ios-forward-fill" width={18} />
-              }
-              sx={{ mr: -1, textTransform: 'none', fontSize: '15px' }}
+              endIcon={<Icon icon="eva:arrow-ios-forward-fill" width={18} />}
+              sx={{ mr: -1, textTransform: "none", fontSize: "15px" }}
             >
               View all
             </Button>
@@ -167,33 +173,28 @@ export function BankingQuickTransfer() {
             sx={{
               position: "relative",
               display: "flex",
-              flexDirection: "row" ,
+              flexDirection: "row",
               alignItems: "center",
               // flexWrap: "wrap",
-              justifyContent: 'center',
-              gap:1.8
+              justifyContent: "center",
+              gap: 1.8,
               // mx:1
             }}
             component="span"
           >
-        
-              {BankingContactsData.slice(0, 5).map((contact) => (
-                <Box
-                  key={contact.Email}
-                  sx={{  }}
-                >
-                  <Avatar
-                    src={contact.URL}
-                    sx={{
-                      opacity: selectedAvatar === contact.Email ? 1 : 0.3,
-                      cursor: "pointer",
-                      transition: "opacity 0.3s",
-                    }}
-                    onClick={() => handleSelectAvatar(contact)}
-                  />
-                </Box>
-              ))}
-          
+            {BankingContactsData.slice(0, 5).map((contact) => (
+              <Box key={contact.Email} sx={{}}>
+                <Avatar
+                  src={contact.URL}
+                  sx={{
+                    opacity: selectedAvatar === contact.Email ? 1 : 0.3,
+                    cursor: "pointer",
+                    transition: "opacity 0.3s",
+                  }}
+                  onClick={() => handleSelectAvatar(contact)}
+                />
+              </Box>
+            ))}
           </Box>
 
           <IconButton>
@@ -246,7 +247,16 @@ export function BankingQuickTransfer() {
             min={0}
             max={1000}
             onChange={handleChangeSlider}
-            sx={{ color: "green" }}
+            sx={{
+              color: "green",
+
+              "& .MuiSlider-thumb": {
+                borderRadius: "50%",
+                color:"#FFFFFF",
+                borderColor:"rgb(145 158 171 / 8%)",
+                borderStyle:"solid"
+              },
+            }}
           />
         </Box>
 

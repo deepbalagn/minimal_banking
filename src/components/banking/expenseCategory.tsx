@@ -1,6 +1,6 @@
 import { Box, Grid, Paper, Typography } from "@mui/material";
-import ApexChart from "../../customizedComponents/PolarAreaChart";
 import ExpenseCategoryItem from "../../customizedComponents/ExpenseCategoryItems";
+import ApexChart from "../../customizedComponents/polarAreaChart";
 
 export default function ExpenseCategory() {
   return (
