@@ -7,12 +7,22 @@ import { BarChart, chartsGridClasses } from "@mui/x-charts";
 const barIncomeData = [76, 42, 29, 41, 27, 96];
 const barSavingsData = [46, 44, 24, 43, 44, 43];
 const barInvestmentData = [26, 22, 37, 38, 32, 25];
+
+
+const monthlyBarIncomeData = [83, 112, 119, 88, 103, 112, 114, 108, 93];
+const monthlyBarSavingsData = [46, 46, 43, 58, 40, 59, 54, 42, 51];
+const monthlyBarInvestmentData = [25, 40, 38, 35, 20, 32, 27, 40, 21];
+
+
+const weeklyBarIncomeData = [24, 41, 35, 151, 49];
+const weeklyBarSavingsData = [24, 56, 77, 88, 99];
+const weeklyBarInvestmentData = [40, 34, 77, 88, 99];
 const yearlyBarxLabels = ["2018", "2019", "2020", "2021", "2022", "2023"];
-const monthlyBarxLabels = ["2018", "2019", "2020", "2021", "2022", "2023"];
-const weeklyBarxLabels = ["2018", "2019", "2020", "2021", "2022", "2023"];
+const monthlyBarxLabels = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep"];
+const weeklyBarxLabels = ["week1", "week2", "week3", "week4", "week5"];
 
 export default function BalanceStatistics() {
-  const [selectedBarChart] = useState("yearly");
+  const [selectedBarChart,setSelectedBarChart] = useState("yearly");
   return (
     <Paper sx={{ p: 3, mb: 2, borderRadius: 5 }}>
       <Box
@@ -36,7 +46,7 @@ export default function BalanceStatistics() {
             alignItems: "start",
           }}
         >
-          <CustomizedMenus />
+          <CustomizedMenus handleSelect={setSelectedBarChart} selectedBarChart={selectedBarChart}/>
         </Box>
       </Box>
       <Box
@@ -181,19 +191,19 @@ export default function BalanceStatistics() {
             borderRadius={6}
             series={[
               {
-                data: barIncomeData,
+                data: monthlyBarIncomeData,
                 label: "income",
                 id: "iId",
                 color: "#007867",
               },
               {
-                data: barSavingsData,
+                data: monthlyBarSavingsData,
                 label: "saving",
                 id: "sId",
                 color: "#ffab00",
               },
               {
-                data: barInvestmentData,
+                data: monthlyBarInvestmentData,
                 label: "investment",
                 id: "invId",
                 color: "#00b8d9",
@@ -224,19 +234,19 @@ export default function BalanceStatistics() {
             borderRadius={6}
             series={[
               {
-                data: barIncomeData,
+                data: weeklyBarIncomeData,
                 label: "income",
                 id: "iId",
                 color: "#007867",
               },
               {
-                data: barSavingsData,
+                data: weeklyBarSavingsData,
                 label: "saving",
                 id: "sId",
                 color: "#ffab00",
               },
               {
-                data: barInvestmentData,
+                data: weeklyBarInvestmentData,
                 label: "investment",
                 id: "invId",
                 color: "#00b8d9",

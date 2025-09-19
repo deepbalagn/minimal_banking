@@ -324,8 +324,8 @@ export default function IncomeExpenensePaper() {
             grid={{ horizontal: true }}
             sx={{
               [`& .${lineElementClasses.root}`]: {
-                stroke: "#1cca56ff",
-                strokeWidth: 2,
+                stroke: "#027968",
+                strokeWidth: 3,
               },
               [`& .${chartsGridClasses.line}`]: {
                 strokeDasharray: "5 3",
@@ -358,8 +358,8 @@ export default function IncomeExpenensePaper() {
             grid={{ horizontal: true }}
             sx={{
               [`& .${lineElementClasses.root}`]: {
-                stroke: "#c2163bff",
-                strokeWidth: 2,
+                stroke: "#b76e00",
+                strokeWidth: 3,
               },
               [`& .${chartsGridClasses.line}`]: {
                 strokeDasharray: "5 3",

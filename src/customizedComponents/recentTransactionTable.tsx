@@ -65,14 +65,14 @@ export default function RecentTransactionTable(data:BankRecentTransactionListTyp
                     )}
                   </Avatar>
                   <Box sx={{ display: "flex", flexDirection: "column" }}>
-                    <Typography fontWeight="bold">{row.type}</Typography>
-                    <Typography>{row.name}</Typography>
+                    <Typography fontWeight="600" variant="body1">{row.type}</Typography>
+                    <Typography color="grey.600" variant="caption">{row.name}</Typography>
                   </Box>
                 </Box>
               </TableCell>
               <TableCell align="left">
                 <Box sx={{ display: "flex", flexDirection: "column" }}>
-                    <Typography fontWeight="bold">{row.date}</Typography>
+                    <Typography fontWeight="600" variant="body2">{row.date}</Typography>
                     <Typography color="grey.500" fontSize={14}>{row.time}</Typography>
                   </Box>
               </TableCell>
