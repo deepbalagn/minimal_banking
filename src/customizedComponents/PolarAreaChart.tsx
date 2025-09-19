@@ -1,13 +1,16 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
+import type { ApexOptions } from "apexcharts"; 
 
 const ApexChart = () => {
-  const [state] = React.useState({
+  const [state] = React.useState<{
+    series: number[];
+    options: ApexOptions;
+  }>({
     series: [22, 18, 16, 17, 14, 22, 10, 21],
-
     options: {
       chart: {
-        type: "polarArea",
+        type: "polarArea", 
       },
       labels: [
         "Entertainment",
@@ -50,6 +53,7 @@ const ApexChart = () => {
       ],
     },
   });
+
   return (
     <div>
       <div id="chart">
