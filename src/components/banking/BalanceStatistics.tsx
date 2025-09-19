@@ -216,7 +216,7 @@ export default function BalanceStatistics() {
                 disableTicks: true,
               },
             ]}
-            yAxis={[{ width: 50, disableLine: true, disableTicks: true }]}
+            yAxis={[{ width: 30, disableLine: true, disableTicks: true }]}
             grid={{ horizontal: true }}
             sx={{
               [`& .${chartsGridClasses.line}`]: {

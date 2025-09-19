@@ -23,11 +23,10 @@ export default function ExpenseCategory() {
           flexDirection: { xs: "column", md: "row" },
           justifyContent: "center",
           alignItems: "center",
-          width: "100%",
         }}
       >
         <ApexChart />
-        <Box p={5} sx={{}}>
+        <Box p={1}>
           <Grid container spacing={2}>
             <Grid size={6}>
               <ExpenseCategoryItem

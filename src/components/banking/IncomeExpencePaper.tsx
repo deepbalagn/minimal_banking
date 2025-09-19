@@ -92,7 +92,7 @@ export default function IncomeExpenensePaper() {
             startIcon={<Add />}
             sx={{ textTransform: "none", fontWeight: "bold" }}
           >
-            Add Card
+            AddCard
           </Button>
           <Button
             size="small"
@@ -136,24 +136,6 @@ export default function IncomeExpenensePaper() {
                   width: "100%",
                 }}
               >
-                <Box
-                  sx={{
-                    position: "absolute",
-                    top: 2,
-                    right: 5,
-                  }}
-                >
-                  <Chip
-                    label="+8.2%"
-                    color="success"
-                    size="small"
-                    sx={{
-                      borderRadius: "8px",
-                      width: "80px",
-                    }}
-                    icon={<ArrowUpward />}
-                  />
-                </Box>
                 <Avatar
                   sx={{
                     backgroundColor: "#004b50",
@@ -199,6 +181,24 @@ export default function IncomeExpenensePaper() {
                       9,990
                     </Typography>
                   </Box>
+                  <Box
+                    sx={{
+                      position: { xs: "unset", sm: "absolute" },
+                      top: 2,
+                      right: 5,
+                    }}
+                  >
+                    <Chip
+                      label="+8.2%"
+                      color="success"
+                      size="small"
+                      sx={{
+                        borderRadius: "8px",
+                        width: "80px"
+                      }}
+                      icon={<ArrowUpward />}
+                    />
+                  </Box>
                 </Box>
               </Box>
             </Button>
@@ -224,24 +224,6 @@ export default function IncomeExpenensePaper() {
                   width: "100%",
                 }}
               >
-                <Box
-                  sx={{
-                    position: "absolute",
-                    top: 1,
-                    right: 5,
-                  }}
-                >
-                  <Chip
-                    label="-6.6%"
-                    color="error"
-                    size="small"
-                    sx={{
-                      borderRadius: "8px",
-                      width: "80px",
-                    }}
-                    icon={<ArrowDownward />}
-                  />
-                </Box>
                 <Avatar
                   sx={{
                     backgroundColor: "#7a4100",
@@ -286,6 +268,24 @@ export default function IncomeExpenensePaper() {
                     <Typography variant="h5" fontWeight={"bold"}>
                       1989
                     </Typography>
+                  </Box>
+                  <Box
+                    sx={{
+                      position: { xs: "unset", sm: "absolute" },
+                      top: 1,
+                      right: 5,
+                    }}
+                  >
+                    <Chip
+                      label="-6.6%"
+                      color="error"
+                      size="small"
+                      sx={{
+                        borderRadius: "8px",
+                        width: "80px",
+                      }}
+                      icon={<ArrowDownward />}
+                    />
                   </Box>
                 </Box>
               </Box>
