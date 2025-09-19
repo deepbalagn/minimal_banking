@@ -4,7 +4,7 @@ import RightSide from "./RightSide";
 export default function Banking() {
   return (
     <>
-      <Container sx={{minWidth:"1536px"}}>
+      <Container>
         <Grid container spacing={2}>
           <Grid size={{ xs: 12, md: 7, lg: 8 }}>
             <LeftSide />

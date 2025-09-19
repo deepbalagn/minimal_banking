@@ -44,32 +44,64 @@ export default function BalanceStatistics() {
           mt: 4,
           mb: 4,
           display: "flex",
-          flexDirection: "row",
+          flexDirection: {xs:"column" , md:"row"} ,
           gap: 4,
         }}
       >
-        <Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-            }}
-          >
-            <Circle sx={{ color:"#007867"}} fontSize="small" />
-            <Typography variant="body1">Income (+43%) </Typography>{" "}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            gap:4
+          }}
+        >
+          <Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              <Circle sx={{ color: "#007867" }} fontSize="small" />
+              <Typography variant="body1">Income (+43%) </Typography>{" "}
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              <AttachMoney sx={{ fontWeight: "bold" }} />
+              <Typography variant="h5" fontWeight={"bold"}>
+                6,789
+              </Typography>
+            </Box>
           </Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-            }}
-          >
-            <AttachMoney sx={{ fontWeight: "bold" }} />
-            <Typography variant="h5" fontWeight={"bold"}>
-              6,789
-            </Typography>
+          <Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              <Circle sx={{ color: "#ffab00" }} fontSize="small" />
+              <Typography variant="body1">Savings (+3%) </Typography>{" "}
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              <AttachMoney sx={{ fontWeight: "bold" }} />
+              <Typography variant="h5" fontWeight={"bold"}>
+                1,234
+              </Typography>
+            </Box>
           </Box>
         </Box>
         <Box>
@@ -80,31 +112,7 @@ export default function BalanceStatistics() {
               alignItems: "center",
             }}
           >
-            <Circle sx={{ color:"#ffab00"}} fontSize="small" />
-            <Typography variant="body1">Savings (+3%) </Typography>{" "}
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-            }}
-          >
-            <AttachMoney sx={{ fontWeight: "bold" }} />
-            <Typography variant="h5" fontWeight={"bold"}>
-              1,234
-            </Typography>
-          </Box>
-        </Box>
-        <Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-            }}
-          >
-            <Circle sx={{ color:"#00b8d9" }} fontSize="small" />
+            <Circle sx={{ color: "#00b8d9" }} fontSize="small" />
             <Typography variant="body1">Investment (+8%) </Typography>{" "}
           </Box>
           <Box
@@ -123,9 +131,9 @@ export default function BalanceStatistics() {
       </Box>
       <Box
         sx={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
+          "& .css-13p1o4b-MuiChartsSurface-root": {
+            width: { xs: "120%", md: "110%" },
+          },
         }}
       >
         {selectedBarChart === "yearly" && (
@@ -133,9 +141,24 @@ export default function BalanceStatistics() {
             height={300}
             borderRadius={6}
             series={[
-              { data: barIncomeData, label: "income", id: "iId", color:"#007867" },
-              { data: barSavingsData, label: "saving", id: "sId" , color:"#ffab00"},
-              { data: barInvestmentData, label: "investment", id: "invId" , color:"#00b8d9"},
+              {
+                data: barIncomeData,
+                label: "income",
+                id: "iId",
+                color: "#007867",
+              },
+              {
+                data: barSavingsData,
+                label: "saving",
+                id: "sId",
+                color: "#ffab00",
+              },
+              {
+                data: barInvestmentData,
+                label: "investment",
+                id: "invId",
+                color: "#00b8d9",
+              },
             ]}
             xAxis={[
               { data: yearlyBarxLabels, disableLine: true, disableTicks: true },
@@ -157,12 +180,31 @@ export default function BalanceStatistics() {
             height={300}
             borderRadius={6}
             series={[
-              { data: barIncomeData, label: "income", id: "iId", color:"#007867" },
-              { data: barSavingsData, label: "saving", id: "sId" , color:"#ffab00"},
-              { data: barInvestmentData, label: "investment", id: "invId" , color:"#00b8d9"},
+              {
+                data: barIncomeData,
+                label: "income",
+                id: "iId",
+                color: "#007867",
+              },
+              {
+                data: barSavingsData,
+                label: "saving",
+                id: "sId",
+                color: "#ffab00",
+              },
+              {
+                data: barInvestmentData,
+                label: "investment",
+                id: "invId",
+                color: "#00b8d9",
+              },
             ]}
             xAxis={[
-              { data: monthlyBarxLabels, disableLine: true, disableTicks: true },
+              {
+                data: monthlyBarxLabels,
+                disableLine: true,
+                disableTicks: true,
+              },
             ]}
             yAxis={[{ width: 50, disableLine: true, disableTicks: true }]}
             grid={{ horizontal: true }}
@@ -181,9 +223,24 @@ export default function BalanceStatistics() {
             height={300}
             borderRadius={6}
             series={[
-              { data: barIncomeData, label: "income", id: "iId", color:"#007867" },
-              { data: barSavingsData, label: "saving", id: "sId" , color:"#ffab00"},
-              { data: barInvestmentData, label: "investment", id: "invId" , color:"#00b8d9"},
+              {
+                data: barIncomeData,
+                label: "income",
+                id: "iId",
+                color: "#007867",
+              },
+              {
+                data: barSavingsData,
+                label: "saving",
+                id: "sId",
+                color: "#ffab00",
+              },
+              {
+                data: barInvestmentData,
+                label: "investment",
+                id: "invId",
+                color: "#00b8d9",
+              },
             ]}
             xAxis={[
               { data: weeklyBarxLabels, disableLine: true, disableTicks: true },

@@ -1,11 +1,10 @@
-import { Icon } from "@iconify/react";
 import { Box, Grid, Paper, Typography } from "@mui/material";
-// import { PieChart } from "@mui/x-charts";
 import ApexChart from "../../customizedComponents/PolarAreaChart";
+import ExpenseCategoryItem from "../../customizedComponents/ExpenseCategoryItems";
 
 export default function ExpenseCategory() {
   return (
-    <Paper sx={{ mb: 2, borderRadius: 5 }} >
+    <Paper sx={{ mb: 2, borderRadius: 5 }}>
       <Box
         sx={{
           display: "flex",
@@ -21,158 +20,70 @@ export default function ExpenseCategory() {
       <Box
         sx={{
           display: "flex",
-          flexDirection: "row",
+          flexDirection: { xs: "column", md: "row" },
           justifyContent: "center",
           alignItems: "center",
           width: "100%",
         }}
       >
         <ApexChart />
-        <Box width={"50%"}>
+        <Box p={5} sx={{}}>
           <Grid container spacing={2}>
             <Grid size={6}>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: 1,
-                }}
-              >
-                <Icon
-                  icon="mingcute:game-2-fill"
-                  width="20"
-                  height="20"
-                  color="#794dc7"
-                />
-                <Typography>Entertainment ($22)</Typography>
-              </Box>
+              <ExpenseCategoryItem
+                title={"Entertain ($22)"}
+                iconText={"mingcute:game-2-fill"}
+                iconColor="#794dc7"
+              />
             </Grid>
             <Grid size={6}>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: 1,
-                }}
-              >
-                <Icon
-                  icon="bi:fuel-pump-fill"
-                  width="20"
-                  height="20"
-                  color="#ff7c5f"
-                />
-                <Typography>Fuel ($18)</Typography>
-              </Box>
+              <ExpenseCategoryItem
+                title={"Fuel ($18)"}
+                iconText={"bi:fuel-pump-fill"}
+                iconColor="#ff7c5f"
+              />
             </Grid>
             <Grid size={6}>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: 1,
-                }}
-              >
-                <Icon
-                  icon="ic:baseline-fastfood"
-                  width="20"
-                  height="20"
-                  color="#3abb90"
-                />
-                <Typography>Fast Food ($16)</Typography>
-              </Box>
+              <ExpenseCategoryItem
+                title={"Fast Food ($16)"}
+                iconText={"ic:baseline-fastfood"}
+                iconColor="#3abb90"
+              />
             </Grid>
             <Grid size={6}>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: 1,
-                }}
-              >
-                <Icon
-                  icon="carbon:cafe"
-                  width="20"
-                  height="20"
-                  color="#ffbe3a"
-                />
-                <Typography>Cafe ($17)</Typography>
-              </Box>
+              <ExpenseCategoryItem
+                title={"Cafe ($17)"}
+                iconText={"carbon:cafe"}
+                iconColor="#ffbe3a"
+              />
             </Grid>
             <Grid size={6}>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: 1,
-                }}
-              >
-                <Icon
-                  icon="mynaui:speaker-solid"
-                  width="20"
-                  height="20"
-                  color="#3a8db3"
-                />
-                <Typography>Connection ($14)</Typography>
-              </Box>
+              <ExpenseCategoryItem
+                title={"Connection ($14)"}
+                iconText={"mynaui:speaker-solid"}
+                iconColor="#3a8db3"
+              />
             </Grid>
             <Grid size={6}>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: 1,
-                }}
-              >
-                <Icon
-                  icon="streamline-pixel:health-drug-medicine-bag-aid-1"
-                  width="20"
-                  height="20"
-                  color="#3ac8e2"
-                />
-                <Typography>Health Care ($22)</Typography>
-              </Box>
+              <ExpenseCategoryItem
+                title={"Health Care ($22)"}
+                iconText={"streamline-pixel:health-drug-medicine-bag-aid-1"}
+                iconColor="#3ac8e2"
+              />
             </Grid>
             <Grid size={6}>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: 1,
-                }}
-              >
-                <Icon
-                  icon="material-symbols:fitness-center-rounded"
-                  width="20"
-                  height="20"
-                  color="#54d283"
-                />
-                <Typography>Fitness ($10)</Typography>
-              </Box>
+              <ExpenseCategoryItem
+                title={"Fitness ($10)"}
+                iconText={"material-symbols:fitness-center-rounded"}
+                iconColor="#54d283"
+              />
             </Grid>
             <Grid size={6}>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: 1,
-                }}
-              >
-                <Icon
-                  icon="fontisto:shopping-basket"
-                  width="20"
-                  height="20"
-                  color="#c78f3a"
-                />
-                <Typography>SuperMarket ($21)</Typography>
-              </Box>
+              <ExpenseCategoryItem
+                title={"SuperMarket ($21)"}
+                iconText={"fontisto:shopping-basket"}
+                iconColor="#c78f3a"
+              />
             </Grid>
           </Grid>
         </Box>
