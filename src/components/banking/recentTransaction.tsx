@@ -1,6 +1,7 @@
 import { ArrowRight } from "@mui/icons-material";
 import { Box, Button, Paper, Typography } from "@mui/material";
 import RecentTransactionTable from "../../customizedComponents/RecentTransactionTable";
+import { bankRecentTransactionData } from "../../data/BankRecentTransactionData";
 
 export default function RecentTransaction() {
   return (
@@ -18,7 +19,7 @@ export default function RecentTransaction() {
         </Box>
       </Box>
       <Box>
-        <RecentTransactionTable />
+        <RecentTransactionTable recentTransactions={bankRecentTransactionData} />
       </Box>
       <Box
         sx={{

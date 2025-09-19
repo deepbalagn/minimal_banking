@@ -8,61 +8,9 @@ import Paper from "@mui/material/Paper";
 import { Avatar, Box, Chip, Typography } from "@mui/material";
 import { Icon } from "@iconify/react";
 import Menu_Component from "./MenuComponent";
+import type { BankRecentTransactionListType } from "../types/BankRecentTransactionType";
 
-const rows = [
-  {
-    img: "https://pub-c5e31b5cdafb419fb247a8ac2e78df7a.r2.dev/public/assets/images/mock/avatar/avatar-3.webp",
-    type: "Receive money from",
-    name: "Annette Black",
-    date: "16 Sep 2025",
-    time: "8:43 am",
-    amount: "$68.71",
-    status: "Progress",
-    tran: "income",
-  },
-  {
-    img: "https://pub-c5e31b5cdafb419fb247a8ac2e78df7a.r2.dev/public/assets/images/mock/avatar/avatar-4.webp",
-    type: "Payment for",
-    name: "Courtney Henry",
-    date: "15 Sep 2025",
-    time: "7:43 am",
-    amount: "$85.21",
-    status: "Completed",
-    tran: "expense",
-  },
-  {
-    img: "https://pub-c5e31b5cdafb419fb247a8ac2e78df7a.r2.dev/public/assets/images/mock/avatar/avatar-5.webp",
-    type: "Payment for",
-    name: "Theresa Webb",
-    date: "14 Sep 2025",
-    time: "6:43 am",
-    amount: "$52.17",
-    status: "Failed",
-    tran: "expense",
-  },
-  {
-    img: "https://pub-c5e31b5cdafb419fb247a8ac2e78df7a.r2.dev/public/assets/images/mock/avatar/avatar-3.webp",
-    type: "Payment for",
-    name: "Fast food",
-    date: "13 Sep 2025",
-    time: "5:43 am",
-    amount: "$25.18",
-    status: "Completed",
-    tran: "expense",
-  },
-  {
-    img: "https://pub-c5e31b5cdafb419fb247a8ac2e78df7a.r2.dev/public/assets/images/mock/avatar/avatar-4.webp",
-    type: "Payment for",
-    name: "Fitness",
-    date: "12 Sep 2025",
-    time: "4:43 am",
-    amount: "$43.84",
-    status: "Progress",
-    tran: "expense",
-  },
-];
-
-export default function RecentTransactionTable() {
+export default function RecentTransactionTable(data:BankRecentTransactionListType) {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -76,7 +24,7 @@ export default function RecentTransactionTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {data.recentTransactions.map((row) => (
             <TableRow
               key={row.name}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
@@ -122,7 +70,12 @@ export default function RecentTransactionTable() {
                   </Box>
                 </Box>
               </TableCell>
-              <TableCell align="left">{row.date}</TableCell>
+              <TableCell align="left">
+                <Box sx={{ display: "flex", flexDirection: "column" }}>
+                    <Typography fontWeight="bold">{row.date}</Typography>
+                    <Typography color="grey.500" fontSize={14}>{row.time}</Typography>
+                  </Box>
+              </TableCell>
               <TableCell align="left">{row.amount}</TableCell>
               <TableCell align="left">
                 <Chip

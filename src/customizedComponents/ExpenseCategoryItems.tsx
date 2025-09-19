@@ -1,14 +1,6 @@
 import { Icon } from "@iconify/react";
 import { Box, Typography } from "@mui/material";
-
-type ExpenseCategoryItemProps = {
-    title : string,
-    iconText : string,
-    iconColor : string,
-    iconHeight? : number,
-    iconWidth? : number,
-    titleFontSize? : number
-}
+import type { ExpenseCategoryItemProps } from "../types/ExpenseCategoryItemPropType";
 
 export default function ExpenseCategoryItem({title,iconText,iconColor,iconHeight=16,iconWidth=16,titleFontSize=13}:ExpenseCategoryItemProps) {
   return (
