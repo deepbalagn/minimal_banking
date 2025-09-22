@@ -41,7 +41,6 @@ export default function RecentTransaction() {
             size="small"
             variant="outlined"
             color="inherit"
-            href="#"
             disableElevation
             endIcon={<ArrowRight />}
             sx={{ textTransform: "none", fontWeight: "bold" , border:0}}
