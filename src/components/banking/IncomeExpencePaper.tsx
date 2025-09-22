@@ -98,7 +98,7 @@ export default function IncomeExpenensePaper() {
             size="small"
             variant="contained"
             color="inherit"
-            href="/dashboard/tour/new"
+            href="#"
             disableElevation
             startIcon={<ArrowDownward />}
             sx={{ textTransform: "none", fontWeight: "bold" }}
