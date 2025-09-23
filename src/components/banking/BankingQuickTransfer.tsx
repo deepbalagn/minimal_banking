@@ -15,25 +15,24 @@ import {
 import { Icon } from "@iconify/react";
 import { useState, useCallback } from "react";
 import { BankingContactsData } from "../../data/BankingContactsData";
-import type { BankingContactsType } from "../../types/BankingContactsType";
 
 type ConfirmTransferDialogProps = {
   open: boolean;
   amount: number | string;
   onClose: () => void;
-  contactInfo: BankingContactsType | null;
+  id: number;
 };
 
 function ConfirmTransferDialog({
   open,
   amount,
   onClose,
-  contactInfo,
+  id,
 }: ConfirmTransferDialogProps) {
+  const contactInfo = BankingContactsData[id];
   return (
     <Dialog open={open} fullWidth maxWidth="xs" onClose={onClose}>
       <DialogTitle>Transfer to</DialogTitle>
-
       <Box
         sx={{
           px: 3,
@@ -85,22 +84,17 @@ function ConfirmTransferDialog({
 export function BankingQuickTransfer() {
   const [amount, setAmount] = useState<string | number>(200);
   const [openDialog, setOpenDialog] = useState(false);
-  const [selectedContact, setSelectedContact] =
-    useState<BankingContactsType | null>(null);
-  const [selectedAvatar, setSelectedAvatar] = useState<string | null>(
-    "marjolaine.white94@gmail.com"
-  );
+  const [selectedAvatarIndex, setSelectedAvatarIndex] = useState<number>(2);
 
   const handleChangeSlider = useCallback(
-    (event: Event, newValue: number | number[]) => {
-      console.log(event);
+    (_event: Event, newValue: number | number[]) => {
       setAmount(newValue as number);
     },
     []
   );
 
   const handleOpenDialog = () => {
-    if (selectedContact) {
+    if (selectedAvatarIndex) {
       setOpenDialog(true);
     }
   };
@@ -109,9 +103,24 @@ export function BankingQuickTransfer() {
     setOpenDialog(false);
   };
 
-  const handleSelectAvatar = (contact: BankingContactsType) => {
-    setSelectedContact(contact);
-    setSelectedAvatar(contact.Email);
+  const handleSelectAvatar = (index: number) => {
+    setSelectedAvatarIndex(index);
+  };
+
+  const handleNextSelection = () => {
+    const nextIndex =
+      selectedAvatarIndex === (BankingContactsData.length - 4) - 1
+        ? 0
+        : selectedAvatarIndex + 1;
+    setSelectedAvatarIndex(nextIndex);
+  };
+
+  const handlePrevSelection = () => {
+    const prevIndex =
+      selectedAvatarIndex === 0
+        ? (BankingContactsData.length - 4) - 1
+        : selectedAvatarIndex - 1;
+    setSelectedAvatarIndex(prevIndex);
   };
 
   return (
@@ -160,7 +169,7 @@ export function BankingQuickTransfer() {
           }}
           component="span"
         >
-          <IconButton>
+          <IconButton onClick={handlePrevSelection}>
             <Icon
               icon="material-symbols:arrow-left-alt-rounded"
               width="24"
@@ -174,26 +183,26 @@ export function BankingQuickTransfer() {
               flexDirection: "row",
               alignItems: "center",
               justifyContent: "center",
-              gap: {xs:0.5,sm:1.8},
+              gap: { xs: 0.5, sm: 1.8 },
             }}
             component="span"
           >
-            {BankingContactsData.slice(0, 5).map((contact) => (
-              <Box key={contact.Email} sx={{}}>
+            {BankingContactsData.slice(0, 5).map((contact, index) => (
+              <Box key={contact.Email}>
                 <Avatar
                   src={contact.URL}
                   sx={{
-                    opacity: selectedAvatar === contact.Email ? 1 : 0.3,
+                    opacity: selectedAvatarIndex === index ? 1 : 0.3,
                     cursor: "pointer",
                     transition: "opacity 0.3s",
                   }}
-                  onClick={() => handleSelectAvatar(contact)}
+                  onClick={() => handleSelectAvatar(index)}
                 />
               </Box>
             ))}
           </Box>
 
-          <IconButton>
+          <IconButton onClick={handleNextSelection}>
             <Icon
               icon="material-symbols:arrow-right-alt-rounded"
               width="24"
@@ -283,7 +292,7 @@ export function BankingQuickTransfer() {
         open={openDialog}
         amount={amount}
         onClose={handleCloseDialog}
-        contactInfo={selectedContact}
+        id={selectedAvatarIndex}
       />
     </>
   );

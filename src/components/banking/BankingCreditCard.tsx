@@ -99,7 +99,6 @@ export function BankingCreditCard() {
             <Typography
               sx={{ color: "#ffffff", fontSize: "16px", fontWeight: "600" }}
             >
-              {" "}
               Deja Brady
             </Typography>
           </Stack>
@@ -113,7 +112,6 @@ export function BankingCreditCard() {
             <Typography
               sx={{ color: "#ffffff", fontSize: "16px", fontWeight: "600" }}
             >
-              {" "}
               11/32
             </Typography>
           </Stack>
